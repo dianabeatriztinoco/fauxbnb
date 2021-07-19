@@ -1,0 +1,43 @@
+.auths {
+    display: flex;
+    float: right;
+    margin-left: 0px;
+}
+
+a {
+    text-decoration: none;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    
+}
+
+a:hover {
+    background-color: lavender;
+    cursor: pointer;
+}
+
+.home {
+    float: left;
+}
+
+ul {
+   list-style-type: none;
+}
+img{
+    height: 50px;
+}
+a.home {
+    display: flex;
+    float: left;
+    height: 100px;
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-left: 0px;
+   
+}
+
+html {
+    padding-right: 70px;
+    padding-left: 10px;
+}
