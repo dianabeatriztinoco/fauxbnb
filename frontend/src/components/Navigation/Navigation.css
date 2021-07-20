@@ -2,6 +2,7 @@
     display: flex;
     float: right;
     margin-left: 0px;
+    margin-right: 0px;
 }
 
 a {
@@ -9,7 +10,7 @@ a {
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
-    
+    padding-right: 20px;
 }
 
 a:hover {
@@ -17,15 +18,13 @@ a:hover {
     cursor: pointer;
 }
 
-.home {
-    float: left;
-}
-
 ul {
    list-style-type: none;
 }
+
 img{
     height: 50px;
+
 }
 a.home {
     display: flex;
@@ -34,10 +33,26 @@ a.home {
     padding-top: 0px;
     margin-top: 0px;
     padding-left: 0px;
+    margin-left: 0px;
+    position: relative;
    
 }
-
-html {
-    padding-right: 70px;
-    padding-left: 10px;
+a.fauxbnb_icon {
+    padding-right: 0px;
+    margin-right: 0px;
+    width: 500px;
+    position: static;
 }
+div.fauxbnb_logo {
+    display: inline;
+    margin-top: 25px;
+    margin-left: 10px;
+    height: 50px;
+    position: fixed;
+    margin-bottom: 0px;
+    color: orangered;
+    font-size: large;
+    font-family: sans-serif;
+    
+}
+
