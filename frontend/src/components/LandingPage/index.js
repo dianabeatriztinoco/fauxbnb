@@ -3,6 +3,7 @@ import './LandingPage.css'
 
 
 const LandingPage = () => {
+    
     return (
         
         <body>
