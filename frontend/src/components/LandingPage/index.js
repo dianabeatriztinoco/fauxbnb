@@ -8,6 +8,8 @@ const LandingPage = () => {
         <body>
 
         <div id='showcase'></div> 
+
+        
         <form className="formContainer">
         <div className="locationContainer">
         <label>location</label>

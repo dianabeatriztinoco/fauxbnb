@@ -31,7 +31,10 @@ function Navigation ({isLoaded}) {
         <ul>
             <li>
             <NavLink className="home" to="/"> 
-            <a href='' className="fauxbnb_icon"><img className='fauxbnb_icon' src={fauxbnb_icon} alt='doghouse' /></a>
+            <a href='' className="fauxbnb_icon"><img className='fauxbnb_icon' src={fauxbnb_icon} alt='doghouse' /> 
+            <div className="fauxbnb_logo">fauxbnb</div>
+            </a>
+           
             </NavLink>
             {isLoaded && sessionLinks}
             </li>
