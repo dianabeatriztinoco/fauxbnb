@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Review.associate = function(models) {
 
-   Review.belongsTo(models.Reservation, { foreignKey: 'reservationsId'})
+  //  Review.belongsTo(models.Reservation, { foreignKey: 'reservationsId'})
    
   };
   return Review;

@@ -24,7 +24,7 @@ div#showcase {
     margin-left: 30px;
    
 }
-input:focus {
+.noOutline:focus {
     outline: 0 none;
     border: 0 none;
 }

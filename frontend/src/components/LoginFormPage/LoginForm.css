@@ -1,40 +1,81 @@
 
 .loginForm {
-
     display: flex;
-    color: pink;
-    justify-content: flex-start;
+    flex-direction: column;
     align-items: center;
-    background-color: lemonchiffon;
+    position: static;
+    margin-left: 35%;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 30px;
+    width: 500px;
+    height: 480px;
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+.loginFormLabel {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 40px;
+    width: 500px;
+    padding-bottom: 15px;
+    border-bottom:  1px solid rgb(191, 187, 187);
+}
+
+.loginFormLabelWelcome {
+    display: flex;
+    justify-content: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 40px;
+    width: 500px;
+    padding-left: 20px;
+  
 }
 
 .logInUserNameInput {
-   padding-left: 10px;
-   margin-left: 10px;
-   margin-right: 10px;
-   border-radius: 20px;
+     
+   width: 450px;
+   height: 50px;
+   margin-top: 10px;
+   padding-left: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+   border: 1px solid rgb(80, 80, 80);
+   border-radius: 10px;
    
 }
 
 .logInPasswordInput {
-    padding-left: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 20px;
-
-    
+   
+   width: 450px;
+   height: 50px;
+   padding-left: 20px;
+   margin-top: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+   border: 1px solid rgb(80, 80, 80);
+   border-radius: 10px;
 }
 
 .loginButton {
     height: 20px;
-    margin-left: 10px;
-    border-radius: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: orangered;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 475px;
+    height: 50px;
+    font-size: large;
    
 }
 
 button:hover {
-    background-color: lavender;
     cursor: pointer;
 }
 
+.loginFormDiv {
+    border-bottom:  1px solid rgb(191, 187, 187);
+}

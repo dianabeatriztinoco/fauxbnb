@@ -1,5 +1,6 @@
 import React from 'react'
 import './LandingPage.css'
+import Stays from '../Stays'
 
 
 
@@ -11,11 +12,10 @@ const LandingPage = () => {
 
         <div id='showcase'></div> 
 
-        
         <form className="formContainer">
         <div className="locationContainer">
         <label>location</label>
-        <input className="focus:outline-none" placeholder="Nearby"></input>
+        <input className="noOutline" placeholder="Nearby"></input>
         </div>
         <div className='check-inContainer'>
         <label>check-in</label>
@@ -26,7 +26,13 @@ const LandingPage = () => {
         <input className="noOutline" placeholder="Add Date"></input>
         </div>
         </form>
+
+        <div>
+        <Stays />
         </div>
+
+        </div>
+        
       
    
     )

@@ -1,9 +1,8 @@
 const express = require('express')
 const asyncHandler = require('express-async-handler');
-
+const bcrypt = require('bcryptjs');
 const { setTokenCookie, restoreUser } = require('../../utils/auth');
 const { User } = require('../../db/models');
-
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
@@ -13,7 +12,7 @@ const validateLogin = [
   check('credential')
     .exists({ checkFalsy: true })
     .notEmpty()
-    .withMessage('Please provide a valid email or username.'),
+    .withMessage('Please provide a valid email.'),
   check('password')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a password.'),
@@ -48,8 +47,9 @@ router.post(
   asyncHandler(async (req, res, next) => {
     const { credential, password } = req.body;
 
-    const user = await User.login({ credential, password });
 
+    const user = await User.login({ credential, password });
+  
     if (!user) {
       const err = new Error('Login failed');
       err.status = 401;
@@ -65,5 +65,21 @@ router.post(
     });
   }),
 );
+
+
+router.post(
+  '/',
+  asyncHandler(async (req, res) => {
+    const { firstName, lastName, email, isHost, password} = req.body;
+    const user = await User.signup({firstName, lastName, email, isHost, password });
+
+    await setTokenCookie(res, user);
+
+    return res.json({
+      user,
+    });
+  }),
+);
+
 
 module.exports = router;
