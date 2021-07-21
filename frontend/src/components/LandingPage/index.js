@@ -2,11 +2,12 @@ import React from 'react'
 import './LandingPage.css'
 
 
+
 const LandingPage = () => {
     
     return (
         
-        <body>
+       <div>
 
         <div id='showcase'></div> 
 
@@ -25,8 +26,8 @@ const LandingPage = () => {
         <input className="noOutline" placeholder="Add Date"></input>
         </div>
         </form>
-
-        </body> 
+        </div>
+      
    
     )
 }
