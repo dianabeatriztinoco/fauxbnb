@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getImages } from "../../store/images";
 import { getStays } from "../../store/stays";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import "./Images.css";
-import Stay from "../Stay";
+
 
 const Images = () => {
   // const stayImages = useSelector((state)=> {
@@ -19,6 +19,7 @@ const Images = () => {
 
   const stays = useSelector((state) => state.stays);
   const stayObjects = Object.values(stays);
+
 
   useEffect(() => {
     dispatch(getImages());
@@ -34,7 +35,7 @@ const Images = () => {
       {imageObjects.map((image) => (
         <div>
           {image.url.includes("main") && (
-            <NavLink to="stays">
+            <NavLink to={`/stays/${image.stayId}`}>
               <img className="mainImage" alt={image.url} src={image.url} />
                 <div>
                 {stayObjects.map((stay) => (

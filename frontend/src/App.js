@@ -35,14 +35,14 @@ function App() {
       <Route path='/signup'>
         <SignupFormPage />
       </Route>
-      <Route path='/stays/'>
+      <Route exact path='/stays/'>
         <Images /> 
       </Route>
-      <Switch>
+      
       <Route path='/stays/:id'>
         <Stays /> 
       </Route>
-      </Switch>
+
     
 
     </Switch>
