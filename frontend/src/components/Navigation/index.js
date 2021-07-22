@@ -7,6 +7,7 @@ import './Navigation.css';
 import fauxbnb_icon from '../../assets/fauxbnb_icon.png'
 
 
+
 function Navigation ({isLoaded}) {
     const sessionUser = useSelector(state => state.session.user);
 
@@ -21,6 +22,7 @@ function Navigation ({isLoaded}) {
             <div className='auths'>
             <NavLink to='/login'> Log In</NavLink>
             <NavLink to='/signup'> Sign Up </NavLink>
+            <NavLink to='/stays'> Stays </NavLink>
             </div>
             </>
         );

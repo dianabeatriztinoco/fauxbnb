@@ -1,16 +1,16 @@
 import React from 'react'
 import './LandingPage.css'
-import Stays from '../Stays'
+import Images from '../Image'
+
 
 
 
 const LandingPage = () => {
     
     return (
-        
+      
        <div>
-
-        <div id='showcase'></div> 
+        <div id='showcase'>
 
         <form className="formContainer">
         <div className="locationContainer">
@@ -26,15 +26,13 @@ const LandingPage = () => {
         <input className="noOutline" placeholder="Add Date"></input>
         </div>
         </form>
-
-        <div>
-        <Stays />
+        </div> 
+        <div className="stayImages">
+            <Images />
         </div>
-
         </div>
-        
       
-   
+      
     )
 }
 

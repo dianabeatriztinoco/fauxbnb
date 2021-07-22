@@ -1,6 +1,9 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import  thunk  from 'redux-thunk';
 import sessionReducer from "./session";
+import imageReducer from "./images";
+import reviewReducer from "./reviews";
+import staysReducer from "./stays";
 
 // when created an empty object is passed into to the combineReducer helper function. Here we will house all of our reducers. Reducers are the building blocks of Redux. 
 // every redux app has state values, create action to describe what happens and uses reducers function to calculate new state values based on the prev state and an action 
@@ -8,7 +11,11 @@ import sessionReducer from "./session";
 
 
 const rootReducer = combineReducers({
-    session: sessionReducer,
+    session: sessionReducer, 
+    images: imageReducer, 
+    reviews: reviewReducer, 
+    stays: staysReducer
+    
   });
 
 // a redux store enhancer is a high order function that take createStore and return a new enhanced version of createStore 

@@ -1,17 +1,21 @@
 // frontend/src/App.js
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import * as sessionActions from "./store/session";
-import Stays from "./components/Stays";
+import Images from "./components/Image"
 import LandingPage from "./components/LandingPage";
+import Stays from "./components/Stays";
+
 
 function App() {
+  
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+ 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
@@ -23,6 +27,7 @@ function App() {
     <Switch>
       <Route exact path='/'>
         <LandingPage />
+        <Images />
       </Route>
       <Route path="/login">
         <LoginFormPage />
@@ -30,9 +35,16 @@ function App() {
       <Route path='/signup'>
         <SignupFormPage />
       </Route>
+      <Route path='/stays/'>
+        <Images /> 
+      </Route>
+      <Switch>
       <Route path='/stays/:id'>
         <Stays /> 
       </Route>
+      </Switch>
+    
+
     </Switch>
     )}
     </>

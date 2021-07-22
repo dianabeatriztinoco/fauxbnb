@@ -67,19 +67,20 @@ router.post(
 );
 
 
-router.post(
-  '/',
-  asyncHandler(async (req, res) => {
-    const { firstName, lastName, email, isHost, password} = req.body;
-    const user = await User.signup({firstName, lastName, email, isHost, password });
+// router.post(
+//   '/signup',
+//   asyncHandler(async (req, res) => {
+//     const { firstName, lastName, email, isHost, password} = req.body;
+//     console.log('=================',firstName)
+//     const user = await User.signup({firstName, lastName, email, isHost, password });
 
-    await setTokenCookie(res, user);
+//     await setTokenCookie(res, user);
 
-    return res.json({
-      user,
-    });
-  }),
-);
+//     return res.json({
+//       user,
+//     });
+//   }),
+// );
 
 
 module.exports = router;

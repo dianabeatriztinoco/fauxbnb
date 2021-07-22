@@ -1,46 +1,96 @@
 .signupForm {
-  display: block;
-  color: pink;
-  justify-content: flex-start;
-  align-items: flex-start;
-  background-color: lemonchiffon;
-  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: static;
+  margin-left: 35%;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 30px;
+  width: 500px;
+  height: 480px;
+  border: 1px solid rgb(80, 80, 80);
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.emailInput {
-  padding-left: 10px;
-  margin-right: 10px;
-  border-radius: 20px;
+.signUpFirstNameInput {
+  width: 450px;
+   height: 50px;
+   margin-top: 10px;
+   padding-left: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+   border: 1px solid rgb(80, 80, 80);
+   border-radius: 10px;
 }
-
-.signUpUserNameInput {
-  padding-left: 10px;
-  margin-right: 10px;
-  border-radius: 20px;
+.signUpEmailInput {
+  width: 450px;
+   height: 50px;
+   margin-top: 10px;
+   padding-left: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+   border: 1px solid rgb(80, 80, 80);
+   border-radius: 10px;
+}
+.signUpLastNameInput {
+  width: 450px;
+   height: 50px;
+   margin-top: 10px;
+   padding-left: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+   border: 1px solid rgb(80, 80, 80);
+   border-radius: 10px;
 }
 
 .signUpPasswordInput {
-  padding-left: 10px;
-  margin-right: 10px;
-  border-radius: 20px;
+  width: 450px;
+   height: 50px;
+   margin-top: 10px;
+   padding-left: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+   border: 1px solid rgb(80, 80, 80);
+   border-radius: 10px;
+}
+.signUpIsHostInput {
+  width: 450px;
+   height: 50px;
+   margin-top: 10px;
+   padding-left: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+   border: 1px solid rgb(80, 80, 80);
+   border-radius: 10px;
 }
 .confirmPasswordInput {
-  padding-left: 10px;
-
-  margin-right: 10px;
-  border-radius: 20px;
+  width: 450px;
+   height: 50px;
+   margin-top: 10px;
+   padding-left: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+   border: 1px solid rgb(80, 80, 80);
+   border-radius: 10px;
 }
 
 .signUpButton {
   height: 20px;
-  border-radius: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: orangered;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 475px;
+    height: 50px;
+    font-size: large;
 }
 
-h1 {
-    padding-top: 10px;
-    margin-left: 10px;
-    font-weight: lighter;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-
+h2 {
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 500px;
+  font-size: medium;
+  margin-top: 0px;
+  padding-bottom: 15px;
+  border-bottom:  1px solid rgb(191, 187, 187);
 }

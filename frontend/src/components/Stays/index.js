@@ -1,16 +1,19 @@
-import react from 'react'
-import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import react from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getImages } from "../../store/images";
+import { deleteReview, getReviews, createReview} from '../../store/reviews'
+import { getStays } from "../../store/stays";
+import { useParams } from 'react-router-dom'
 
 
 const Stays = () => {
-    const sessionUser = useSelector(state => state.session.user);
-    
+    const { id } = useParams(); 
+    console.log( id )
 
     return (
-
-        <div> Stays/:id</div>
+        <div> test </div>
     )
 }
 
-export default Stays; 
+export default Stays

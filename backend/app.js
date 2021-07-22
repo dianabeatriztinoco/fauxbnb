@@ -5,12 +5,14 @@ const csurf = require('csurf');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const { environment } = require('./config');
+const isProduction = environment === 'production';
+const app = express();
+
 const routes = require('./routes');
 const { ValidationError } = require('sequelize');
 
-const isProduction = environment === 'production';
 
-const app = express();
+
 //logging information about requests and responses:
 app.use(morgan('dev'));
 //middleware for parsing cookies 
@@ -43,8 +45,8 @@ app.use(
   })
 );
 
-app.use(routes);
 
+app.use(routes);
 // error to catch any request that do not match any of the routes defines and create serveer error with status code 404
 
 app.use((_req, _res, next) => {
@@ -77,5 +79,7 @@ app.use((err, _req, res, _next) => {
     stack: isProduction ? null : err.stack,
   });
 });
+
+
 
 module.exports = app

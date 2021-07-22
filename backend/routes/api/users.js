@@ -49,9 +49,7 @@ const validateSignup = [
     validateSignup,
     asyncHandler(async (req, res) => {
       const { firstName, lastName, email, isHost, password } = req.body;
-      console.log(email)
-      console.log(firstName)
-      console.log(email)
+     console.log(firstName)
       const user = await User.signup({ firstName, lastName, email, isHost, password });
 
       await setTokenCookie(res, user);
