@@ -22,9 +22,13 @@ const Stays = () => {
     const stays = useSelector(state => state.stays)
     const stayObjects = Object.values(stays);
 
+    const reviews = useSelector(state => state.reviews)
+    const reviewObjects = Object.values(reviews)
+
     useEffect(() => {
     dispatch(getImages());
     dispatch(getStays());
+    dispatch(getReviews())
   }, [dispatch]);
 
 
@@ -58,7 +62,18 @@ const Stays = () => {
                     <div>{stay.price}</div>
                     <div>{stay.description}</div>
                     </div>
+
+                    <div>
+                      <button>BOOK NOW!</button>
                       </div>
+
+
+                      <div>
+
+                          </div> 
+                      </div>
+
+                    
                   )}
 
 
