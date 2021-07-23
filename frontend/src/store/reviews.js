@@ -47,7 +47,7 @@ export const deleteReview = (reviewsId) => async(dispatch) => {
 }
 
 export const createReview = (review) => async(dispatch) => {
-    const {reservationId, content} = review 
+    const {userId, stayId, content} = review 
     
     const response = await csrfFetch('/api/reviews', {
         method: 'post', 
@@ -55,7 +55,6 @@ export const createReview = (review) => async(dispatch) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            reservationId, 
             content
         })
         

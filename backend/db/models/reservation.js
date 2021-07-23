@@ -8,7 +8,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Reservation.associate = function(models) {
     // Reservation.belongsTo(models.Stay, { foreignKey: 'stayId'})
-    // Reservation.hasOne(models.Review, { foreignKey: 'reservationId'})
     // Reservation.belongsTo(model.User, { forgeinKey: 'userId'})
   };
   return Reservation;

@@ -9,6 +9,7 @@
         "start": "npm start --prefix backend"
     },
     "dependencies": {
-        "pg": "^8.6.0"
+        "pg": "^8.6.0",
+        "sequelize": "^6.6.5"
     }
 }

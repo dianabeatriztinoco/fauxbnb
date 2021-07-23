@@ -81,9 +81,9 @@ router.delete(
 
 router.post(
   '/reviews', asyncHandler(async(req, res) => {
-    const {reservationId, content} = req.body
+    const {userId, stayId, content} = req.body
  
-    const review = await Reviews.create({reservationId, content});
+    const review = await Reviews.create({userId, stayId, content});
     return res.json(review)
 
   })

@@ -22,6 +22,7 @@ const Stays = () => {
     const stays = useSelector(state => state.stays)
     const stayObjects = Object.values(stays);
 
+
     const reviews = useSelector(state => state.reviews)
     const reviewObjects = Object.values(reviews)
 
@@ -65,8 +66,15 @@ const Stays = () => {
 
                     <div>
                       <button>BOOK NOW!</button>
-                      </div>
 
+                      </div>
+                    <div>
+                    {reviewObjects.map((review)=> (
+                     
+                      <div>{review.content}</div>
+                    ))}
+
+                    </div>
 
                       <div>
 

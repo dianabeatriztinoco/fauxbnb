@@ -3,15 +3,14 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getImages } from "../../store/images";
 import { deleteReview, getReviews, createReview} from '../../store/reviews'
-
 import './Reviews.css'
 
-const Reviews = () => {
+ const Reviews = () => {
 
 const dispatch = useDispatch()
 
 const [content, setContent] = useState('')
-const [reservationId, setReservationId] = useState('')
+
 
 
 const images = useSelector((state) => state.images);
@@ -19,6 +18,8 @@ const imageObjects = Object.values(images)
 
 const reviews = useSelector((state) => state.reviews); 
 const reviewObjects = Object.values(reviews)
+console.log(reviewObjects)
+
 useEffect(() => {
     dispatch(getReviews());
 }, [dispatch]);
@@ -28,58 +29,58 @@ useEffect(() => {
 const handleSubmit = (e) => {
     e.preventDefault();
     
-      return dispatch(createReview({ reservationId, content })).catch(
+      return dispatch(createReview({ content })).catch(
     
       );
     }
    
 
-    return (
+//     return (
 
-    <div>
-      {}
+//     <div>
+//       {}
 
-        <form className='createReview' onSubmit={handleSubmit}>
-        <input
-        className="reservationIdInput"
-        placeholder="reservationId"
-        type="integer"
-        value={reservationId}
-        onChange={(e) => setReservationId(e.target.value)}
-        required
-      />
-      <input
-        className="contentInput"
-        placeholder="Content"
-        type="text"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        required
-      />
-      <button type="submit">add review</button>
-        </form>
-        {reviewObjects.map(review => (
-            <div>
-                {review.content}
-                <button
-                className='deleteReview'
-                onClick={()=>
+//         <form className='createReview' onSubmit={handleSubmit}>
+//         <input
+//         className="reservationIdInput"
+//         placeholder="reservationId"
+//         type="integer"
+//         value={stayId}
+//         onChange={(e) => setReservationId(e.target.value)}
+//         required
+//       />
+//       <input
+//         className="contentInput"
+//         placeholder="Content"
+//         type="text"
+//         value={content}
+//         onChange={(e) => setContent(e.target.value)}
+//         required
+//       />
+//       <button type="submit">add review</button>
+//         </form>
+//         {reviewObjects.map(review => (
+//             <div>
+//                 {review.content}
+//                 <button
+//                 className='deleteReview'
+//                 onClick={()=>
                     
-                dispatch(deleteReview(review.id))
+//                 dispatch(deleteReview(review.id))
             
-            }
-                >delete</button>
-            </div>
-        ))}
+//             }
+//                 >delete</button>
+//             </div>
+//         ))}
        
          
       
 
-    </div>
+//     </div>
 
     
-)
+// )
     
         }
 
-export default Reviews
+ export default Reviews
