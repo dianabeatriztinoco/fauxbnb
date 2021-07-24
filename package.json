@@ -1,10 +1,6 @@
 {
-    "name": "fauxbnb",
-    "description": "a really cool app",
-    "version": "1.0.0",
-    "engines": {
-        "node": "14.x"
-    },
+    
+    
     "scripts": {
         "heroku-postbuild": "npm run build --prefix frontend",
         "install": "npm --prefix backend install backend && npm --prefix frontend install frontend",
@@ -13,11 +9,6 @@
         "sequelize": "npm run --prefix backend sequelize",
         "sequelize-cli": "npm run --prefix backend sequelize-cli",
         "start": "npm start --prefix backend"
-      },
-    "dependencies": {
-        "express": "^4.17.1",
-        "pg": "^8.6.0",
-        "sequelize": "^6.6.5",
-        "toposort": "^2.0.2"
-    }
-}
+      }
+
+ }
