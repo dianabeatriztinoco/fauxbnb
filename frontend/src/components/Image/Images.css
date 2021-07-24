@@ -1,16 +1,46 @@
 div.stayImage{
+
  display: flex;
- flex-wrap: wrap;
- justify-content: center;
- width: 1500px;
- height: 1000px;
- border-top: 1px solid rgb(191, 187, 187);
+ flex-direction: row;
+
+ /* padding-right: 40px; */
+ margin-left: 70px;
+ width: 900px;
+ height: 2000px;
  margin-top: 50px;
- padding-top: 10px;
+ padding-top: 90px;
 
 }
 
 .mainImage {
-    height: 300px;
-    width: 300px;
+border-radius: 10px;
+margin-left: 40px;
+height: 250px;
+width: 250px;
+
 }
+
+.imageReview {
+    margin-left: 40px;
+}
+
+.imageCountry {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.imageDescription {
+    height: 70px;
+    border: 0px solid black;
+    text-overflow: clip;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+    
+}
+
+.price{
+    margin-bottom: 15px;
+
+}
+
+

@@ -1,8 +1,7 @@
 .auths {
     display: flex;
     float: right;
-    margin-left: 0px;
-    margin-right: 0px;
+ 
 }
 
 a {
@@ -58,10 +57,19 @@ div.fauxbnb_logo {
 
 .navContainer {
     overflow: hidden;
-    border-bottom: 1px solid rgb(191, 187, 187);
-    width: 100%;
+    width: 1850px;
     height: 90px;
-    position: static;
+    position: sticky;
 }
 
 
+.links {
+    display: flex;
+    float: right;
+    justify-content: space-evenly;
+    font-size: large;
+ 
+}
+.bookings{
+
+}

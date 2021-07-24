@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     
-      return queryInterface.bulkInsert('Reviews', [
+      return queryInterface.bulkInsert('Review', [
         {userId: 1, 
           stayId: 1,
           content: `Vestibulum araeporttitor volutpat. Curabitur arcu erat, accumsan id imperd.`,
@@ -120,7 +120,7 @@ updatedAt: new Date()},
       // Return a promise to correctly handle asynchronicity.
 
       // Example:
-      return queryInterface.bulkDelete('Reviews', null, {});
+      return queryInterface.bulkDelete('Review', null, {});
     
   }
 };

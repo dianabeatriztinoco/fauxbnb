@@ -4,24 +4,32 @@ div#showcase {
     width: 1330px;
     background-repeat: no-repeat;
     background-size: 100%;
-    margin-left: 150px;
-    margin-top: 80px;
-    margin-right: 0px;
+    float: center;
+    margin-left: 320px;
+    margin-top: 40px;
+    padding-right: 200px;
     border-radius: 20px;
     border: 1px solid black;
-    position: sticky;
 
    
 }
-
+.formOuterContainer {
+    display: flex;
+    justify-content: center;
+    margin-right: 40000px;
+    margin-bottom: 60px;
+}
 .formContainer {
+ 
     background-color: white;
-    width: 340px;    
+    width: 450px;    
+    height: 500px;
     border-radius: 10px;
     border: 1px solid rgb(193, 187, 187); 
     box-shadow: 0px 0px 10px 5px rgb(196, 191, 191);
     margin-top: 100px;
-    margin-left: 20px;
+    margin-right: 200px;
+ 
  
    
 }
@@ -36,7 +44,7 @@ input {
 .locationContainer {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 415px;
     border: 1px solid rgb(193, 187, 187); 
     border-radius: 10px;
     padding-top: 10px;
@@ -49,7 +57,7 @@ input {
 .check-inContainer {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 415px;
     border: 1px solid rgb(193, 187, 187); 
     border-radius: 10px;
     padding-top: 10px;
@@ -61,7 +69,7 @@ input {
 .check-outContainer {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 415px;
     border: 1px solid rgb(193, 187, 187); 
     border-radius: 10px;
     padding-top: 10px;
@@ -69,10 +77,5 @@ input {
     padding-left: 5px;
     padding-right: 5px;
     margin: 10px;
-}
-
-html {
-    margin-left: 200px;
-    margin-right: 200px;
 }
 

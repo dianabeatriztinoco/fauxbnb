@@ -19,7 +19,6 @@ export async function csrfFetch(url, options = {}) {
     // call the default windos fetch with the url and the option passed in
     const res = await window.fetch(url, options);
 
-
     // if the response is above above or equal to 400, then throw error with the error being the resonpons 
 
     if (res.status >= 400) throw res;

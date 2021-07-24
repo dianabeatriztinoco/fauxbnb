@@ -8,13 +8,27 @@ import fauxbnb_icon from '../../assets/fauxbnb_icon.png'
 
 
 
+
 function Navigation ({isLoaded}) {
     const sessionUser = useSelector(state => state.session.user);
 
+
+    
     let sessionLinks;
     if(sessionUser){
+        
         sessionLinks = (
-            <ProfileButton user={sessionUser} />
+            <>
+            <div className="welcome">
+            Welcome {sessionUser.email}
+            </div>
+            <div className="links">
+             <NavLink className='stays' to='/stays'> Stays </NavLink>
+             <NavLink className='reviews' to='/reviews'> Reviews </NavLink>
+             <NavLink className='bookings' to='/bookings'> Bookings </NavLink>
+             <ProfileButton className='logOutButton'  />
+             </div>
+             </>
         );
     } else {
         sessionLinks = (
@@ -23,6 +37,8 @@ function Navigation ({isLoaded}) {
             <NavLink to='/login'> Log In</NavLink>
             <NavLink to='/signup'> Sign Up </NavLink>
             <NavLink to='/stays'> Stays </NavLink>
+            <NavLink className='reviews' to='/reviews'> Reviews </NavLink>
+             <NavLink className='bookings' to='/bookings'> Bookings </NavLink>
             </div>
             </>
         );

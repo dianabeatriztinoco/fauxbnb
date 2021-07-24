@@ -11,7 +11,7 @@ const LandingPage = () => {
       
        <div>
         <div id='showcase'>
-
+        <div className='formOuterContainer'>
         <form className="formContainer">
         <div className="locationContainer">
         <label>location</label>
@@ -26,6 +26,7 @@ const LandingPage = () => {
         <input className="noOutline" placeholder="Add Date"></input>
         </div>
         </form>
+        </div>
         </div> 
         <div className="stayImages">
             <Images />
