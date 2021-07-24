@@ -56,6 +56,7 @@ function closedBookForm (){
 
   return (
     <>
+      <div className="title"> DogWood Biscuit District Queen Cottage</div>
       <div>
         <div className="stayIdImage">
           {imageObjects.map((image) => (
@@ -80,22 +81,22 @@ function closedBookForm (){
             <div>
               {" "}
               {stay.id === idNum && (
-                <div>
-                  <div className="name"> Entire place hosted by </div>
-                  <div>
-                    <div className="address">{stay.address}</div>
-                    <div>{stay.city}</div>
-                    <div>{stay.state}</div>
-                    <div>{stay.country}</div>
-                    <div>{stay.price}</div>
-                    <div>{stay.description}</div>
+                <div className="stayDescriptionContainer">
+                  <div className="name"> Entire place hosted by    <div className="nameDescription"> 2 guests · 1 bedroom, · 1 bed, · 1 bath </div></div>
+                 
+                  <div className="address"> 
+                    {/* <div >{stay.address}</div> */}
+                    <div>{stay.city}, {stay.state} </div>
+                    {/* <div>{stay.country}</div> */}
+                    <div>${stay.price}/night</div>
+                    <div className='description'>{stay.description}</div>
                   </div>
   
                   
                   <div>
-                    <label className="reviewLabel">
+                    <div className="reviewLabel">
                       4.9 Reviews 🐾🐾🐾🐾🐾{" "}
-                    </label>
+                    </div>
                     <ul>
                       <li>Cleanliness ━━━━━━━━━━━━━━━━━ 5</li>
                       <li>Communication ━━━━━━━━━━━━━━━━━ 5</li>
@@ -106,14 +107,15 @@ function closedBookForm (){
                     </ul>
 
                     <div id='bookFrom'>
-                    <button >BOOK NOW!</button>
+                
+                    <button className='bookNow'>See Availability</button>
                   </div>
                 <NavLink to={`/review/${stay.id}`}>
                   <div>
-                    <button >Leave a Review!</button>
+                    <button className="leaveAReview">Leave a Review!</button>
                   </div>
                   </NavLink>
-
+             
                     <div className="stayReviews">
                       {reviewObjects.map((review) => (
                         <>
