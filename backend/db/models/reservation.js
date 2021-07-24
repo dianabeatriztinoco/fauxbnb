@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Reservation.associate = function(models) {
     Reservation.belongsTo(models.Stay, { foreignKey: 'stayId'})
-    Reservation.belongsTo(model.User, { forgeinKey: 'userId'})
+    Reservation.belongsTo(models.User, { forgeinKey: 'userId'})
   };
   return Reservation;
 };

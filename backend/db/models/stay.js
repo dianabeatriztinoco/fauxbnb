@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
  
   Stay.associate = function(models) {
     Stay.hasMany(models.Image, { foreignKey: 'stayId'})
-    Stay.hasOne(model.Reservation, { foreignKey: 'stayId'})
-    Stay.hasMany(models.Review, { foreignKey: 'reviewId'})
+    Stay.hasOne(models.Reservation, { foreignKey: 'stayId'})
+    // Stay.hasMany(models.Review, { foreignKey: 'reviewId'})
   };
 
   return Stay;

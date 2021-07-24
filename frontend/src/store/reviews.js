@@ -61,8 +61,7 @@ export const deleteReview = (reviewsId, reviews) => async(dispatch) => {
         const review = await response.json();
         console.log(review)
         dispatch(remove(review.id))
-        dispatch(load(reviews))
-  
+        
      
     }
 }

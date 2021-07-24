@@ -73,7 +73,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   
   User.associate = function(models) {
-   User.belongsTo(models.Stay, {foreignKey: 'hostId'});
+  //  User.belongsTo(models.Stay, {foreignKey: 'hostId'});
    User.hasOne(models.Reservation, {foreignKey: 'userId'})
 
   };
