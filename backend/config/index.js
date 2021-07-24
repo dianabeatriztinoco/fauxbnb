@@ -1,4 +1,5 @@
 // reads the enviroment variiables and exports them for my apllilcation which i have set in the I set in .env.
+// backend/config/index.js
 module.exports = {
   environment: process.env.NODE_ENV || 'development',
   port: process.env.PORT || 5000,
