@@ -12,6 +12,8 @@ router.get('/hello/world', function(req, res) {
   res.cookie('XSRF-TOKEN', req.csrfToken());
   res.send('Hello World!');
 });
+
+
 if (process.env.NODE_ENV === 'production') {
   const path = require('path');
   // Serve the frontend's index.html file at the root route
