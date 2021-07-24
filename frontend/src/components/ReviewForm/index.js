@@ -72,7 +72,7 @@ const idNum = parseInt(id)
             >
             </textarea>
             {/* {imageObjects.forEach(())} */}
-            <NavLink to={`/stays/${image.stayId}`}>
+            <NavLink to={`/stays/{${idNum}}`}>
             <button type='submit'>submit review</button>
             </NavLink>
         </form>
