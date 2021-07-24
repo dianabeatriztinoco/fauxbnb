@@ -15,7 +15,9 @@
         "dev:frontend": "npm install --prefix frontend start",
         "sequelize": "npm run --prefix backend sequelize",
         "sequelize-cli": "npm run --prefix backend sequelize-cli",
-        "start": "npm start --prefix backend"
+        "start": "npm start --prefix backend",
+        "client-install": "npm install --prefix client"
+      
     },
     "dependencies": {
         "pg": "^8.6.0",
