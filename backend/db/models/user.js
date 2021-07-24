@@ -4,7 +4,8 @@ const { Validator } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
-    'Users', 
+    
+    'User', 
     {
     firstName: {
       type: DataTypes.STRING,
@@ -30,10 +31,10 @@ module.exports = (sequelize, DataTypes) => {
 
 
   User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
-    const { id, email } = this; // context will be the User instance
-    return { id, email };
+    const { id, firstName, lastName, email, isHost } = this; // context will be the User instance
+    return { id, firstName, lastName, email, isHost};
   };
-  
+
   User.prototype.validatePassword = function (password) {
     return bcrypt.compareSync(password, this.hashedPassword.toString());
    };
@@ -44,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
 
    User.login = async function ({ credential, password }) {
     const { Op } = require('sequelize');
-    const user = await User.scope(null).findOne({
+    const user = await User.findOne({
       where: {
         [Op.or]: {
           email: credential,
@@ -59,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
   User.signup = async function ({ firstName, lastName, email, isHost, password }) {
     
     const hashedPassword = bcrypt.hashSync(password);
-    console.log(hashedPassword)
+    
     const user = await User.create({
       firstName, 
       lastName,
@@ -67,7 +68,7 @@ module.exports = (sequelize, DataTypes) => {
       isHost,
       hashedPassword,
     });
-    console.log(firstName)
+
     return await User.scope(null).findByPk(user.id);
   };
   

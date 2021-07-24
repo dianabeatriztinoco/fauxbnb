@@ -1,9 +1,15 @@
 
 const LOAD_STAYS = 'stays/LOAD'; 
+const LOAD_STAY = 'stay/LOAD'
 
 export const load = (stays) => ({
-    type: LOAD_STAYS,
+    type: LOAD_STAYS, 
     payload: stays
+})
+
+export const loadOne = (stay) => ({
+    type: LOAD_STAY, 
+    payload: stay
 })
 
 export const getStays = () => async(dispatch) => {
@@ -14,6 +20,15 @@ export const getStays = () => async(dispatch) => {
         return stays;
     }
 }
+
+// export const getStay = () => async(dispatch) => {
+//     const response = await fetch('/api/stays')
+//     if(response.ok){
+//         const stay = await response.json();
+//         dispatch(load(stay))
+//         return stay
+//     }
+// }
 
 const initialState = {};
 
@@ -30,6 +45,13 @@ const staysReducer = (state = initialState, action) => {
                 ...allStays
             }
         }
+        //     case LOAD_STAY: {
+              
+        //         return {
+        //             ...state, 
+        //             [action.stay.id] : action.stay
+        //         }
+        // }
         default: 
         return state
     }

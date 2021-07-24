@@ -1,34 +1,40 @@
 import { csrfFetch } from "./csrf";
+import { loadOne } from "./stays";
 const LOAD_REVIEWS = 'reviews/LOAD'; 
 const DELETE_REVIEWS = 'reviews/DELETE'
 const CREATE_ITEM = 'reviews/CREATE'
+const UPDATE_REVIEW = 'reviews/UPDATE'
 
-
-export const load = (reviews) => ({
+ const load = (reviews) => ({
     type: LOAD_REVIEWS,
     payload: reviews 
 })
 
-export const create = (reviews) => ({
-    type: CREATE_ITEM, 
-    payload: reviews
-})
 
-export const remove = (reviewsId) => ({
+ const remove = (reviewsId, reviews) => ({
 
         type: DELETE_REVIEWS, 
-        payload: reviewsId
+        payload: reviewsId, reviews
     })
 
 
    
+const create = (reviews) => ({
+    type: CREATE_ITEM, 
+    payload: reviews
 
+})
+
+const update = (reviews) => ({
+    type: UPDATE_REVIEW, 
+    payload: reviews
+})
 
 
 
 
 export const getReviews = () => async(dispatch) => {
-    const response = await fetch('/api/reviews')
+    const response = await csrfFetch('/api/reviews')
     if(response.ok){
         const reviews = await response.json();
         dispatch(load(reviews))
@@ -36,33 +42,71 @@ export const getReviews = () => async(dispatch) => {
     }
 }
 
-export const deleteReview = (reviewsId) => async(dispatch) => {
+export const getReview = (id) => async(dispatch) => {
+    
+    const response = await csrfFetch('/api/reviews/')
+    if (response.ok) {
+        const review = await response.json();
+        dispatch(load(review, id))
+        return review;
+    }
+}
+export const deleteReview = (reviewsId, reviews) => async(dispatch) => {
+    
     const response = await csrfFetch(`/api/reviews/${reviewsId}`, {
         method: 'delete'
     })
     if (response.ok){
+     
         const review = await response.json();
+        console.log(review)
         dispatch(remove(review.id))
+        dispatch(load(reviews))
+  
+     
     }
 }
 
 export const createReview = (review) => async(dispatch) => {
-    const {userId, stayId, content} = review 
-    
+     const {userId, stayId, content} = review 
+
+ 
+   
     const response = await csrfFetch('/api/reviews', {
         method: 'post', 
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            content
+         userId, 
+         stayId, 
+         content
         })
-        
-    })
+       
+    });
+
+    if(response.ok){
     const data = await response.json()
-    dispatch(create(data.review))
-    return response;
+   
+    dispatch(create(data))
+    return data;
+    };
 }
+
+// export const updateReview = data => async dispatch => {
+//     const response = await csrfFetch(`api/reviews/${data}`, {
+//         method: 'put', 
+//         headers: {
+//             'Content-Type': 'application/json',
+//         }, 
+//         body: JSON.stringify(data)
+//     })
+//     if (response.ok) {
+//         const review = await response.json();
+//         dispatch(update(review));
+//         return review;
+//       }
+//     };
 
 
 
@@ -74,6 +118,7 @@ const reviewReducer = (state = initialState, action) => {
         case LOAD_REVIEWS: {
             const allReviews = {};
             action.payload.reviews.forEach(review=>{
+             
                 allReviews[review.id] = review; 
             });
 
@@ -85,9 +130,20 @@ const reviewReducer = (state = initialState, action) => {
 
         case DELETE_REVIEWS: 
         const newState = {...state }; 
-        delete newState[action.reviewsId]
+        delete newState[action.reviewId]
         return newState
+    
+        case CREATE_ITEM: {
+            
+            return {
+              ...state,
+             
+             [action.reviews]:action.reviews, 
+        
+            };
+          }
 
+          
         default: 
         return state
 

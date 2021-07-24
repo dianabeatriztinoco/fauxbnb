@@ -9,7 +9,8 @@ import * as sessionActions from "./store/session";
 import Images from "./components/Image"
 import LandingPage from "./components/LandingPage";
 import Stays from "./components/Stays";
-
+import Reviews from './components/Reviews';
+import ReviewForm from "./components/ReviewForm";
 
 function App() {
   
@@ -43,6 +44,13 @@ function App() {
         <Stays /> 
       </Route>
 
+      <Route path={`/review/:id`}>
+        <ReviewForm /> 
+      </Route>
+     
+      <Route path='/reviews/:id'>
+        <Reviews /> 
+      </Route>
     
 
     </Switch>

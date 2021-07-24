@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Stay = sequelize.define('Stays', {
+  const Stay = sequelize.define('Stay', {
     hostId: DataTypes.INTEGER,
     availability: DataTypes.BOOLEAN,
     address: DataTypes.STRING,
@@ -10,10 +10,12 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.DECIMAL,
     description: DataTypes.TEXT
   }, {});
+ 
   Stay.associate = function(models) {
     // Stay.hasMany(models.Image, { foreignKey: 'stayId'})
     // Stay.hasOne(model.Reservation, { foreignKey: 'stayId'})
     // Stay.hasMany(models.Review, { foreignKey: 'reviewId'})
   };
+
   return Stay;
 };

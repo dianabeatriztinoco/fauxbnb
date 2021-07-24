@@ -2,6 +2,7 @@ import react from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getImages } from "../../store/images";
+import { getReviews } from "../../store/reviews";
 import { getStays } from "../../store/stays";
 import { Link, useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
@@ -31,29 +32,47 @@ const Images = () => {
  
 
   return (
+    
+
     <div className="stayImage">
+     
       {imageObjects.map((image) => (
-        <div>
+
+
+        <div className='landingPageImageContainer'>
+          
           {image.url.includes("main") && (
-            <NavLink to={`/stays/${image.stayId}`}>
+            <NavLink to={`/stays/${image.stayId}`} >
+              <div>
               <img className="mainImage" alt={image.url} src={image.url} />
-                <div>
+            
+              </div>
+
+                <div className="imageReview">
                 {stayObjects.map((stay) => (
                   <div> {stay.id === image.stayId && (
                     <div>
-                    <div>{stay.address}</div>
+                      <div>🐾🐾🐾🐾🐾</div>
+                    {/* <div>{stay.address}</div>
                     <div>{stay.city}</div>
-                    <div>{stay.state}</div>
-                    <div>{stay.country}</div>
-                    <div>{stay.price}</div>
-                    <div>{stay.description}</div>
+                    <div>{stay.state}</div> */}
+                    <div className='imageCountry'>{stay.country}</div>
+                    <div className="price">${stay.price} / night </div>
+                    <div className='imageDescription'>{stay.description}...</div>
+                    
+                    <button className="bookMe"> more deets </button>
+                  
                     </div>
+                   
+                     
+                     
                   ) } </div>
                 ))}
                 </div>
            
             </NavLink>
           )}
+          
         </div>
       ))}
     </div>

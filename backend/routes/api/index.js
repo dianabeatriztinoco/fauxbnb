@@ -19,7 +19,7 @@ router.get(
   asyncHandler(async (req, res) => {
     const user = await User.findOne({
       where: {
-        username: "Demo-lition",
+        email: "demoUser@demo.com",
       },
     });
     setTokenCookie(res, user);
@@ -48,31 +48,47 @@ router.get(
   }
 );
 
-const { Images } = require("../../db/models");
+const { Image } = require("../../db/models");
 
 router.get(
   "/images",
   asyncHandler(async (req, res) => {
-    const images = await Images.findAll();
+    const images = await Image.findAll();
     return res.json({ images });
   })
 );
 
-const { Reviews } = require('../../db/models')
+const { Review } = require('../../db/models')
+
 
 router.get(
   '/reviews', 
   asyncHandler(async(req, res)=>{
-    const reviews = await Reviews.findAll();
+    const reviews = await Review.findAll();
+   
     return res.json({reviews})
   })
 )
 
+// router.get (
+//   '/reviews/:id', asyncHandler(async(req,res) => {
+//     const id = req.params.id
+//     console.log('++++++++++++++++++++++++',id)
+//     const review = await Reviews.findByPk(id)
+//     return res.json({review})
+//   })
+// )
+
 router.delete(
   '/reviews/:id', asyncHandler(async (req, res) => {
-    const id = req.params.id
-    const review = await Reviews.findByPk(id)
-    review.destroy()
+    const id = req.params['id']
+    const idNum = parseInt(id)
+    
+    
+    await Review.destroy({where:{ id : idNum}})
+    // const review = await Review.findByPk(idNum)
+    
+    // return review.destroy()
     
     // const reviewsId = await Reviews.destroy({where:id});
     // return res.json({reviewsId})
@@ -81,22 +97,54 @@ router.delete(
 
 router.post(
   '/reviews', asyncHandler(async(req, res) => {
+
+    // res.json({requestBody: req.body})
     const {userId, stayId, content} = req.body
- 
-    const review = await Reviews.create({userId, stayId, content});
-    return res.json(review)
+    
+  
+    console.log(content)
+  
+
+    const review = await Review.create({
+       userId, 
+       stayId, 
+       content 
+      });
+
+     return res.json(review)
+     
 
   })
 )
 
+router.put(
+  '/reviews/:id', asyncHandler(async(req, res)=> {
+    const id = req.params.id
+    console.log(typeof(id))
+    // const id = await Reviews.update(req.body);
+    const review = await Review.findByPk(id); 
+    return res.json(review)
+  })
+)
 
-const { Stays } = require('../../db/models')
+const { Stay } = require('../../db/models');
+
 
 router.get(
   '/stays', 
   asyncHandler(async(req, res)=>{
-    const stays = await Stays.findAll();
+    const stays = await Stay.findAll();
     return res.json({stays})
+  })
+)
+
+router.get(
+  '/stays/:id', 
+  asyncHandler(async(req, res)=> {
+    const id = req.params.id
+    console.log(id)
+    const stay = await Stay.findByPk(id);
+    return res.json(stay)
   })
 )
 module.exports = router;

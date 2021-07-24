@@ -1,11 +1,58 @@
 div.stayIdImage {
   display: flex;
   flex-direction: row;
+  width: 1300px;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+   margin-left: 100px; 
+} 
+
+.selectedImages {
+
+  border-radius: 20px;
+  height: 300px;
+  width: 300px;
+
 }
 
-.image{
-    display: inline;
-    
-    height: 200px;
-    width: 200px;
+.theDogHouse {
+  font-size: xx-large;
+  margin-bottom: 80px;
+  height: 80px;
 }
+
+.stayIdDetails {
+  margin-top: 100px;
+  font-size: large;
+}
+
+.reviewLabel {
+  font-size: xx-large;
+}
+
+.stayReviews {
+  display: flex;
+  
+ flex-direction: column;
+  
+  height: 1000px;
+  overflow: hidden;
+}
+
+.reviewCotent {
+  padding-left: 5px;
+  overflow: hidden;
+ 
+  width: 300px;
+  height: 50px;
+  color: black;
+  
+}
+
+.divReview {
+  padding-top: 40px;
+  height: 100px;
+}
+
+
