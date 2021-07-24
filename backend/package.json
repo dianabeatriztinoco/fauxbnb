@@ -1,5 +1,4 @@
 {
-  
   "scripts": {
     "sequelize": "sequelize",
     "sequelize-cli": "sequelize-cli",
