@@ -13,4 +13,13 @@
         "sequelize": "^6.6.5",
         "toposort": "^2.0.2"
     }
-}
+},
+
+{
+    "name": "fauxbnb",
+    "description": "a really cool app",
+    "version": "1.0.0",
+    "engines": {
+      "node": "14.x"
+    }
+  }
