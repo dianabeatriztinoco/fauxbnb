@@ -12,8 +12,7 @@
         "dev:frontend": "npm install --prefix frontend start",
         "sequelize": "npm run --prefix backend sequelize",
         "sequelize-cli": "npm run --prefix backend sequelize-cli",
-        "start": "npm start --prefix backend",
-        "client-install": "npm install --prefix client"
+        "start": "npm start --prefix backend"
     },
     "dependencies": {
         "express": "^4.17.1",

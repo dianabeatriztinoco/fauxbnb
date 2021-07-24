@@ -21,7 +21,7 @@ const idNum = parseInt(id)
 
     const user = useSelector((state) => state.session)
     const actionUserId = user.user.id
-    console.log(user)
+
     
     const [content, setContent] = useState('')
     const [userId, setUserId] = useState(actionUserId)

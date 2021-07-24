@@ -102,7 +102,7 @@ router.post(
     const {userId, stayId, content} = req.body
     
   
-    console.log(content)
+
   
 
     const review = await Review.create({
@@ -120,7 +120,7 @@ router.post(
 router.put(
   '/reviews/:id', asyncHandler(async(req, res)=> {
     const id = req.params.id
-    console.log(typeof(id))
+
     // const id = await Reviews.update(req.body);
     const review = await Review.findByPk(id); 
     return res.json(review)
@@ -142,7 +142,7 @@ router.get(
   '/stays/:id', 
   asyncHandler(async(req, res)=> {
     const id = req.params.id
-    console.log(id)
+
     const stay = await Stay.findByPk(id);
     return res.json(stay)
   })

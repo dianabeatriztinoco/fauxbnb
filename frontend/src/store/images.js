@@ -14,7 +14,7 @@ export const  getImages = (image) => async (dispatch) => {
     if(response.ok){
     const images = await response.json();
     dispatch(load(images))
-    console.log(images)
+  
     return images
     }
     
