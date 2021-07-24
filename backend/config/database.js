@@ -21,10 +21,10 @@ module.exports = {
     seederStorage: 'sequelize',
     use_env_variable: 'DATABASE_URL',
     dialectOptions: {
-      // ssl: {
-      //   require: true,
-      //   rejectUnauthorized: false,
-      // },
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
     },
   },
 };
