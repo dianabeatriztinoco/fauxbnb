@@ -14,7 +14,7 @@ const LandingPage = () => {
         <div className='formOuterContainer'>
         <form className="formContainer">
         <div className="locationContainer">
-        <label>location</label>
+        <label>location this a change i'll hopefully see </label>
         <input className="noOutline" placeholder="Nearby"></input>
         </div>
         <div className='check-inContainer'>
