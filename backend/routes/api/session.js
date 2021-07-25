@@ -68,6 +68,15 @@ router.post(
   }),
 );
 
+router.get("/demo", asyncHandler(async(req, res, next) => {
+  const demoUser = await User.findOne({where: {email: 'demoUser@demo.com' }})
+
+  User.login(req, res, demoUser)
+  
+  await setTokenCookie(res, demoUser) 
+  return res.redirect('/')
+}))
+
 
 // router.post(
 //   '/signup',

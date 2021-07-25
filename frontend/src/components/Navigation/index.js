@@ -10,6 +10,12 @@ import fauxbnb_icon from '../../assets/fauxbnb_icon.png'
 
 
 function Navigation ({isLoaded}) {
+
+    const demo = (e) => {
+        e.preventDefault();
+        dispatch(sessionActions.loginDemo());
+      };
+    
     const sessionUser = useSelector(state => state.session.user);
 
 
@@ -39,6 +45,7 @@ function Navigation ({isLoaded}) {
             <NavLink to='/stays'> Stays </NavLink>
             <NavLink className='reviews' to='/reviews'> Reviews </NavLink>
              <NavLink className='bookings' to='/bookings'> Bookings </NavLink>
+             <NavLink className='demoUser' to='/'><button className='logInDemo'  onClick={demo}>Demo User</button></NavLink>
             </div>
             </>
         );
