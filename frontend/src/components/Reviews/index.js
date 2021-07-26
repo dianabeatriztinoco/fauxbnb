@@ -23,7 +23,6 @@ const [content, setContent] = useState('')
 
 
 const stays = useSelector((state) => {state.stays})
-const stayObjects = Object.values(stays)
 const images = useSelector((state) => state.images);
 
 // const imageObjects = Object.values(images)
@@ -65,9 +64,8 @@ const handleSubmit = (e) => {
           <div>
           {review.content}
           </div>
-          {stayObjects.forEach(stay => (
-
-        <NavLink to={`/stays/${stay.id}`}> <button
+          {}
+        <NavLink to={`/stays/${idNum}`}> <button
                 className='deleteReview'
 
                 onClick={()=>{dispatch(deleteReview(review.id)) }}
@@ -75,7 +73,7 @@ const handleSubmit = (e) => {
                >delete
 
                </button></NavLink>
-               ))}
+
 
 
 
