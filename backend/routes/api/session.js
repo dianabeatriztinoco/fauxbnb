@@ -74,7 +74,8 @@ router.get("/demo", asyncHandler(async(req, res, next) => {
   User.login(req, res, demoUser)
   
   await setTokenCookie(res, demoUser) 
-  return res.redirect('/')
+
+  return res.render('/')
 }))
 
 
