@@ -68,11 +68,11 @@ const idNum = parseInt(id)
         <form onSubmit={handleSubmit}>
             
             <textarea className='review' onChange={(e) => setContent(e.target.value)} >
-            <NavLink to={`/`}>
+          
             <button type='submit' className='submit'>submit review</button>
 
-            why are you not showing this ........sdflajsflk;asdkj
-            </NavLink>
+   
+      
             </textarea>
         </form>
 
