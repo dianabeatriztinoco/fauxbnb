@@ -67,6 +67,7 @@ const handleSubmit = (e) => {
           </div>
        
         <NavLink to={`/`}> <button
+       
                 className='deleteReview'
 
                 onClick={()=>{dispatch(deleteReview(review.id)) }}

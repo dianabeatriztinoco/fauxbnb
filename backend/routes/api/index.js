@@ -97,11 +97,11 @@ router.delete(
 )
 
 router.post(
-  '/reviews/:id', asyncHandler(async(req, res) => {
+  '/reviews', asyncHandler(async(req, res) => {
 
     // res.json({requestBody: req.body})
     const {userId, stayId, content} = req.body
-    
+    console.log(userId)
 
     const review = await Review.create({
        userId, 
