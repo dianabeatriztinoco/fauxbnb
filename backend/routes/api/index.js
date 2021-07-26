@@ -85,7 +85,8 @@ router.delete(
     const idNum = parseInt(id)
     
     
-    await Review.destroy({where:{ id : idNum}})
+   const deletedReview = await Review.destroy({where:{ id : idNum}})
+   return res.json(deletedReview)
     // const review = await Review.findByPk(idNum)
     
     // return review.destroy()
