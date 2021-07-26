@@ -47,7 +47,7 @@ router.post(
   validateLogin,
   asyncHandler(async (req, res, next) => {
     const { credential, password } = req.body;
-  console.log(User)
+
     
     const user = await User.login({ credential, password });
     
@@ -68,6 +68,19 @@ router.post(
   }),
 );
 
+router.get("/demo", asyncHandler(async(req, res, next) => {
+
+  const demoUser = await User.findOne({where: {email: 'demoUser@demo.com' }})
+
+  User.login(demoUser)
+  
+  await setTokenCookie(res, demoUser) 
+
+   res.json({
+     demoUser
+   })
+}))
+
 
 // router.post(
 //   '/signup',
@@ -83,6 +96,7 @@ router.post(
 //     });
 //   }),
 // );
+
 
 
 module.exports = router;

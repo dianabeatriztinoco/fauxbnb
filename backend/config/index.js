@@ -1,4 +1,6 @@
 // reads the enviroment variiables and exports them for my apllilcation which i have set in the I set in .env.
+// backend/config/index.js
+// backend/config/index.js
 module.exports = {
   environment: process.env.NODE_ENV || 'development',
   port: process.env.PORT || 5000,
@@ -13,5 +15,4 @@ module.exports = {
     expiresIn: process.env.JWT_EXPIRES_IN,
   },
 };
-
 //Each environment variable will be read and exported as a key from this file. 

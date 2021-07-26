@@ -21,7 +21,7 @@ const idNum = parseInt(id)
 
     const user = useSelector((state) => state.session)
     const actionUserId = user.user.id
-    console.log(user)
+
     
     const [content, setContent] = useState('')
     const [userId, setUserId] = useState(actionUserId)
@@ -67,15 +67,13 @@ const idNum = parseInt(id)
 
         <form onSubmit={handleSubmit}>
             
-            <textarea className='review' 
-               onChange={(e) => setContent(e.target.value)} 
-             
-            >
+            <textarea className='review' onChange={(e) => setContent(e.target.value)} >
+          
+            <button type='submit' className='submit'>submit review</button>
+
+   
+      
             </textarea>
-            {/* {imageObjects.forEach(())} */}
-            <NavLink to={`/stays/{${idNum}}`}>
-            <button type='submit'>submit review</button>
-            </NavLink>
         </form>
 
         

@@ -70,6 +70,28 @@ div.fauxbnb_logo {
     font-size: large;
  
 }
-.bookings{
+.welcome{
+    display: inline;
+    margin-top: 25px;
+    margin-left: 20px;
+    height: 50px;
+    position: static;
+    margin-bottom: 0px;
+    color: orangered;
+    font-size: large;
+    font-family: sans-serif;
 
+}
+
+.logInDemo {
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: orangered;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 25px;
+    margin-right: 50px;
+    font-size: medium;
+    align-content: center;
+    margin-bottom: 20px;
 }

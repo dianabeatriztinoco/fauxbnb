@@ -59,7 +59,7 @@ export const deleteReview = (reviewsId, reviews) => async(dispatch) => {
     if (response.ok){
      
         const review = await response.json();
-        console.log(review)
+       
         dispatch(remove(review.id))
         
      

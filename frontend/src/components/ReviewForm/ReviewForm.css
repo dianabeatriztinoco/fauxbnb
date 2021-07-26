@@ -1,9 +1,19 @@
 .review {   
     display: flex; 
     height: 500px;
-    width: 900px;
+    width: 500px;
+    margin-left: 500px; 
+    margin-right: 500px;
 }
 
-.hello{
-    font-size:xx-large;
+.submit{
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: orangered;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 25px;
+    font-size: medium;
+    margin-left: 500px;
+    align-content: center;
 }

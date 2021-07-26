@@ -8,8 +8,14 @@ div.stayIdImage {
    margin-left: 100px; 
 } 
 
-.selectedImages {
+.title{
+  font-size: 40px;
+  padding-left: 30px;
 
+}
+
+.selectedImages {
+  margin-top: 40px;
   border-radius: 20px;
   height: 300px;
   width: 300px;
@@ -29,11 +35,12 @@ div.stayIdImage {
 
 .reviewLabel {
   font-size: xx-large;
+  margin-left: 20px;
 }
 
 .stayReviews {
   display: flex;
-  
+  margin-right: 20px;
  flex-direction: column;
   
   height: 1000px;
@@ -55,4 +62,52 @@ div.stayIdImage {
   height: 100px;
 }
 
+.name{
+  margin: 20px;
+  font-size: xx-large;
+}
 
+.address{
+  padding-top: 40px;
+  margin: 20px;
+  border-top: 1px solid rgb(140, 138, 138);
+  font-size: large;
+}
+
+.nameDescription{
+  font-size: large;
+}
+
+.description{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.bookNow {
+  margin-top: 20px;
+  border-radius: 10px;
+    background-color: orangered;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 25px;
+    margin-right: 50px;
+    font-size: medium;
+    align-content: center;
+
+}
+
+.leaveAReview {
+  border-radius: 10px;
+    background-color: orangered;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 25px;
+    margin-right: 50px;
+    font-size: medium;
+    align-content: center;
+}
+
+.stayButtons {
+  display: flex;
+  flex-direction: row;
+}

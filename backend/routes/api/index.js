@@ -85,7 +85,8 @@ router.delete(
     const idNum = parseInt(id)
     
     
-    await Review.destroy({where:{ id : idNum}})
+   const deletedReview = await Review.destroy({where:{ id : idNum}})
+   return res.json(deletedReview)
     // const review = await Review.findByPk(idNum)
     
     // return review.destroy()
@@ -96,14 +97,11 @@ router.delete(
 )
 
 router.post(
-  '/reviews', asyncHandler(async(req, res) => {
+  '/reviews/:id', asyncHandler(async(req, res) => {
 
     // res.json({requestBody: req.body})
     const {userId, stayId, content} = req.body
     
-  
-    console.log(content)
-  
 
     const review = await Review.create({
        userId, 
@@ -117,13 +115,18 @@ router.post(
   })
 )
 
-router.put(
-  '/reviews/:id', asyncHandler(async(req, res)=> {
-    const id = req.params.id
-    console.log(typeof(id))
-    // const id = await Reviews.update(req.body);
-    const review = await Review.findByPk(id); 
-    return res.json(review)
+router.patch(
+  '/reviews', asyncHandler(async(req, res)=> {
+    const id = req.params['id']
+
+    const idNum = parseInt(id)
+
+    const {userId, stayId, content} = req.body
+   console.log(content)
+    const review = await Review.findByPk(idNum); 
+    console.log(review)
+    const newReview =  await comment.update({userId, stayId, content});
+    return res.json(newReview)
   })
 )
 
@@ -142,9 +145,37 @@ router.get(
   '/stays/:id', 
   asyncHandler(async(req, res)=> {
     const id = req.params.id
-    console.log(id)
+
     const stay = await Stay.findByPk(id);
     return res.json(stay)
   })
 )
+
+const { Reservation } = require('../../db/models');
+
+router.get(
+  '/bookings', 
+  asyncHandler(async(req, res)=>{
+    const bookings = await Reservation.findAll();
+    return res.json({bookings})
+  })
+)
+
+router.delete(
+  '/stay/:id', asyncHandler(async (req, res) => {
+    const id = req.params['id']
+    const idNum = parseInt(id)
+    
+    
+   const deletedReview = await Review.destroy({where:{ id : idNum}})
+   return res.json(deletedReview)
+    // const review = await Review.findByPk(idNum)
+    
+    // return review.destroy()
+    
+    // const reviewsId = await Reviews.destroy({where:id});
+    // return res.json({reviewsId})
+  })
+)
+
 module.exports = router;
