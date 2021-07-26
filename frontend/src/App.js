@@ -28,6 +28,7 @@ function App() {
     <Switch>
       <Route exact path='/'>
         <LandingPage />
+        <Reviews />
         <Images />
       </Route>
       <Route path="/login">

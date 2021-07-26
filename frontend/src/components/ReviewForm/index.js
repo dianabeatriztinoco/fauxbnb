@@ -45,7 +45,7 @@ const idNum = parseInt(id)
         e.preventDefault();
      
       
-      return dispatch(createReview({ userId, stayId, content }))
+      return dispatch(createReview({ userId: userId, stayId:stayId, content: content }))
     
     }    
 
@@ -68,12 +68,9 @@ const idNum = parseInt(id)
         <form onSubmit={handleSubmit}>
             
             <textarea className='review' onChange={(e) => setContent(e.target.value)} >
-          
-            <button type='submit' className='submit'>submit review</button>
-
-   
       
             </textarea>
+            <button type='submit' className='submit'>submit review</button>
         </form>
 
         

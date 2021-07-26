@@ -66,7 +66,7 @@ const handleSubmit = (e) => {
           {review.content}
           </div>
        
-        <NavLink to={`/stays/${stay.id}`}> <button
+        <NavLink to={`/stays`}> <button
                 className='deleteReview'
 
                 onClick={()=>{dispatch(deleteReview(review.id)) }}
