@@ -148,4 +148,16 @@ router.get(
     return res.json(stay)
   })
 )
+
+const { Reservation } = require('../../db/models');
+
+router.get(
+  '/bookings', 
+  asyncHandler(async(req, res)=>{
+    const bookings = await Reservation.findAll();
+    return res.json({bookings})
+  })
+)
+
+
 module.exports = router;
