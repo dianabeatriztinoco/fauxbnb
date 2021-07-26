@@ -68,7 +68,7 @@ const idNum = parseInt(id)
         <form onSubmit={handleSubmit}>
             
             <textarea className='review' onChange={(e) => setContent(e.target.value)} >
-            <NavLink to={`/stays/{${idNum}}`}>
+            <NavLink to={`/`}>
             <button type='submit' className='submit'>submit review</button>
             </NavLink>
             </textarea>
