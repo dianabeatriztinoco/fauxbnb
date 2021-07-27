@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from 'react';
 
 import { NavLink } from 'react-router-dom'
 import * as sessionActions from "../../store/session";
@@ -11,10 +12,13 @@ import fauxbnb_icon from '../../assets/fauxbnb_icon.png'
 
 
 function Navigation ({isLoaded}) {
+    const [demoUser, setDemoUser] = useState(false)
+
     const dispatch = useDispatch()
     const demo = (e) => {
         e.preventDefault();
         dispatch(sessionActions.loginDemo());
+        setDemoUser(true);
       };
     
     const sessionUser = useSelector(state => state.session.user);
@@ -46,7 +50,7 @@ function Navigation ({isLoaded}) {
             <NavLink to='/stays'> Stays </NavLink>
             <NavLink className='reviews' to='/reviews'> Reviews </NavLink>
              <NavLink className='bookings' to='/bookings'> Bookings </NavLink>
-             <NavLink className='demoUser' to='/'><button className='logInDemo'  onClick={demo}>Demo User</button></NavLink>
+             <NavLink className='demoUser' to='/'><button className='logInDemo' value={demoUser} onClick={demo}>Demo User</button></NavLink>
             </div>
             </>
         );
