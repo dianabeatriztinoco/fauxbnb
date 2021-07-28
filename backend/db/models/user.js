@@ -56,6 +56,17 @@ module.exports = (sequelize, DataTypes) => {
       return await User.scope(null).findByPk(user.id);
     }
   };
+
+  // User.loginDemo = async function ({email}) {
+  //    await User.findOne({where:{
+  //     email: 'demoUser@demo.com'
+  //   }})
+  //   return User
+  // }
+
+   
+
+
   
   User.signup = async function ({ firstName, lastName, email, isHost, password }) {
     

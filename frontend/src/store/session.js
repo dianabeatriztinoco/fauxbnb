@@ -70,6 +70,7 @@ export const signup = (user) => async (dispatch) => {
 
 export const loginDemo = () => async (dispatch) => {
 
+
   const response = await csrfFetch('/api/session/demo', {
     method: 'GET'
   });

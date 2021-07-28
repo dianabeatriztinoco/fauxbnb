@@ -74,11 +74,9 @@ router.get("/demo", asyncHandler(async(req, res, next) => {
 
   User.login(demoUser)
   
-  await setTokenCookie(res) 
+   setTokenCookie(res, demoUser) 
 
-   res.json({
-     demoUser
-   })
+   return res.json(demoUser)
 }))
 
 
