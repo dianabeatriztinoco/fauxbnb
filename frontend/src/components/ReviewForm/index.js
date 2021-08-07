@@ -2,13 +2,13 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
-import * as sessionActions from "../../store/session";
-import reviewReducer, { deleteReview, getReviews, createReview, getReview} from '../../store/reviews'
+// import { NavLink } from 'react-router-dom'
+// import * as sessionActions from "../../store/session";
+import  { createReview } from '../../store/reviews'
 import { getStays } from '../../store/stays';
 import { getImages } from '../../store/images';
 import './ReviewForm.css'
-import Images from '../Image';
+// import Images from '../Image';
 
 
 
@@ -24,8 +24,8 @@ const idNum = parseInt(id)
 
     
     const [content, setContent] = useState('')
-    const [userId, setUserId] = useState(actionUserId)
-    const [stayId, setStayId] = useState(idNum)
+    const [userId] = useState(actionUserId)
+    const [stayId] = useState(idNum)
     
     useEffect(()=>{
         dispatch(getImages())
@@ -33,8 +33,8 @@ const idNum = parseInt(id)
     }, [dispatch])
 
 
-   const stay = useSelector(state => state.stays)
-   const stayObjects = Object.values(stay)
+//    const stay = useSelector(state => state.stays)
+//    const stayObjects = Object.values(stay)
   
 
    const images = useSelector(state => state.stays)
@@ -56,10 +56,7 @@ const idNum = parseInt(id)
             
             {imageObjects.forEach((image) => {
 
-                {image.id === actionUserId && (
-
-
-                    <div className='hello'>{image.url}</div>
+                {if (image.id === actionUserId)  ( <div className='hello'>{image.url}</div>
                 )}
             })}
 

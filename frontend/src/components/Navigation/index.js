@@ -18,20 +18,20 @@ function Navigation ({isLoaded}) {
     const demo = (e) => {
         e.preventDefault();
         dispatch(sessionActions.loginDemo());
-        setDemoUser(true);
+        setDemoUser(e);
       };
+   
     
     const sessionUser = useSelector(state => state.session.user);
-
-
+      console.log(sessionUser)
     
     let sessionLinks;
     if(sessionUser){
         
-        sessionLinks = (
+         sessionLinks = (
             <>
             <div className="welcome">
-            Welcome {sessionUser.email}
+            Welcome {sessionUser.email || sessionUser}
             </div>
             <div className="links">
              <NavLink className='stays' to='/stays'> Stays </NavLink>

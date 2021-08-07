@@ -12,10 +12,10 @@ function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   
-  const openMenu = () => {
-    if (showMenu) return;
-    setShowMenu(true);
-  };
+  // const openMenu = () => {
+  //   if (showMenu) return;
+  //   setShowMenu(true);
+  // };
   
   useEffect(() => {
     if (!showMenu) return;
@@ -44,7 +44,9 @@ function ProfileButton({ user }) {
           {/* <li>{user.username}</li> */}
           <li></li>
           <li>
-            <NavLink to='/'><button className='logOutButton'  onClick={logout}>Log Out</button></NavLink>
+            <NavLink to='/'>
+              <button className='logOutButton'  onClick={logout}>Log Out</button>
+              </NavLink>
           </li>
         </ul>
      

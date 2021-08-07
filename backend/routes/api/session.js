@@ -68,11 +68,11 @@ router.post(
   }),
 );
 
-router.get("/demo", asyncHandler(async(req, res, next) => {
+router.post("/demo", asyncHandler(async(req, res, next) => {
 
-  const demoUser = await User.findOne({where: {email: 'demoUser@demo.com' }})
-
-  User.login(demoUser)
+  const demoUser = await User.findOne({where: {email:'demoUser@demo.com' }})
+  
+  User.login(demoUser.email)
   
    setTokenCookie(res, demoUser) 
 

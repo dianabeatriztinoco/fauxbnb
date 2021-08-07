@@ -1,10 +1,10 @@
-import react from "react";
-import { useState, useEffect } from "react";
+// import react from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getImages } from "../../store/images";
-import { getReviews } from "../../store/reviews";
+// import {  } from "../../store/reviews";
 import { getStays } from "../../store/stays";
-import { Link, useParams } from "react-router-dom";
+// import { Link, useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import "./Images.css";
 

@@ -3,6 +3,7 @@ import { csrfFetch } from './csrf';
 // constants 
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
+const DEMO_LOGIN = 'session/demoLogin';
 
 // POJO action creators 
 
@@ -11,13 +12,22 @@ const setUser = (user) => {
       type: SET_USER,
       payload: user,
     };
+   
   };
+ 
   
   const removeUser = () => {
     return {
       type: REMOVE_USER,
     };
   };
+
+  const demoLogin = (demoUser) => {
+    return {
+      type: DEMO_LOGIN, 
+      payload: demoUser
+    }
+  }
 
 // thunk action 
 
@@ -70,12 +80,16 @@ export const signup = (user) => async (dispatch) => {
 
 export const loginDemo = () => async (dispatch) => {
 
-
   const response = await csrfFetch('/api/session/demo', {
-    method: 'GET'
+    method: 'POST',
   });
-  dispatch(setUser());
+
+ if(response.ok){
+   const data = await response.json()
+  
+  dispatch(demoLogin(data.email));
   return response;
+ }
 }
 
 /////////////////////////////////////////////////////
@@ -99,6 +113,10 @@ const sessionReducer = (state = initialState, action) => {
     case REMOVE_USER:
       newState = Object.assign({}, state);
       newState.user = null;
+      return newState;
+    case DEMO_LOGIN:
+      newState = Object.assign({}, state);
+      newState.user = action.payload;
       return newState;
     default:
       return state;
