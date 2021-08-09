@@ -42,11 +42,12 @@ export const login = (user) => async (dispatch) => {
     }),
    
   });
-
+  if(response.ok){
   const data = await response.json();
-
+console.log(data)
   dispatch(setUser(data.user));
   return response;
+  }
 };
   
 export const restoreUser = () => async (dispatch) => {
@@ -86,8 +87,7 @@ export const loginDemo = () => async (dispatch) => {
 
  if(response.ok){
    const data = await response.json()
-  
-  dispatch(demoLogin(data.email));
+  dispatch(demoLogin(data));
   return response;
  }
 }

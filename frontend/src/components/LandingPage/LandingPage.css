@@ -79,3 +79,23 @@ input {
     margin: 10px;
 }
 
+.textOne {
+    margin-top: 80px;
+    font-size: 50px;
+    margin-left: 40px;
+
+}
+
+.textTwo {
+    margin-top: 10px;
+    font-size: 30px;
+    color: grey;
+    margin-left: 40px;
+    margin-bottom: 30px;
+} 
+
+.stayImages {
+    margin-top: 10px;
+}
+
+

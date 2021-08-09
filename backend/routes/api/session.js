@@ -72,7 +72,7 @@ router.post("/demo", asyncHandler(async(req, res, next) => {
 
   const demoUser = await User.findOne({where: {email:'demoUser@demo.com' }})
   
-  User.login(demoUser.email)
+  User.login(demoUser)
   
    setTokenCookie(res, demoUser) 
 

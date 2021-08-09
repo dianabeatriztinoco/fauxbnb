@@ -28,6 +28,12 @@ const LandingPage = () => {
         </form>
         </div>
         </div> 
+        <div className="textOne">
+            Some pawsitive reviews guest are saying about our stays 
+        </div>
+        <div className='textTwo'> 
+            Over <strong>700,000 guest reviews</strong> wiht an average of <strong>4.8 out of 5 paws</strong> 
+        </div>
         <div className="stayImages">
             <Images />
         </div>
