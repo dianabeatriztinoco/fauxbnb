@@ -29,7 +29,12 @@ function Navigation ({isLoaded}) {
     if(sessionUser){
         
          sessionLinks = (
-            <>
+            <><div>
+            <div className="welcomeContainer">
+            <div className="welcome">
+            {/* Welcome {sessionUser.email || sessionUser} */}
+            </div>
+            </div>
             <div className="welcome">
             Welcome {sessionUser.email || sessionUser}
             </div>
@@ -38,6 +43,7 @@ function Navigation ({isLoaded}) {
              <NavLink className='reviews' to='/reviews'> Reviews </NavLink>
              <NavLink className='bookings' to='/bookings'> Bookings </NavLink>
              <ProfileButton className='logOutButton'  />
+             </div>
              </div>
              </>
         );
