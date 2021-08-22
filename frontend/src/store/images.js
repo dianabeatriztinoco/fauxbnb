@@ -20,7 +20,7 @@ export const  getImages = (image) => async (dispatch) => {
     
 }
 
-
+    
 const initialState = {};
 
 const imageReducer = (state = initialState, action) => {
