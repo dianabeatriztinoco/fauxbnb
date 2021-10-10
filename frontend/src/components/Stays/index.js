@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getImages } from "../../store/images";
 import { getStays } from "../../store/stays";
-import {
+import reviewReducer, {
   deleteReview,
   getReviews,
   createReview,
@@ -117,9 +117,14 @@ function closedBookForm (){
                   </NavLink>
              
                     <div className="stayReviews">
+                     
                       {reviewObjects.map((review) => (
                         <>
                           {review.stayId === stay.id && (
+                            <>
+                             <div>
+                              {review.userId}
+                             </div>
                             <div className="divReview">
                               <NavLink
                                 to={`/reviews/${review.id}`}
@@ -129,6 +134,7 @@ function closedBookForm (){
                                 {review.content}
                               </NavLink>
                             </div>
+                          </>
                           )}
                         </>
                       ))}
