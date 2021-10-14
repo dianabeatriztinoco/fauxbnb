@@ -11,6 +11,8 @@ import LandingPage from "./components/LandingPage";
 import Stays from "./components/Stays";
 import Reviews from './components/Reviews';
 import ReviewForm from "./components/ReviewForm";
+import Footer from "./components/Footer/Footer"
+
 
 function App() {
   
@@ -29,7 +31,8 @@ function App() {
       <Route exact path='/'>
         <LandingPage />
         <Reviews />
-        <Images />
+        {/* <Images /> */}
+        <Footer />
       </Route>
       <Route path="/login">
         <LoginFormPage />

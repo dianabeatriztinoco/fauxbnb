@@ -36,7 +36,7 @@ function Navigation ({isLoaded}) {
             </div>
             </div>
             <div className="welcome">
-            Welcome {sessionUser.email || sessionUser}
+            Welcome {sessionUser.firstName || sessionUser}
             </div>
             <div className="links">
              <NavLink className='stays' to='/stays'> Stays </NavLink>
