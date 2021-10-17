@@ -28,7 +28,8 @@ const LandingPage = () => {
         </form>
         </div>
         </div> 
-        <div className="textOne">
+        
+        <div className="textOne"> 
             Some pawsitive reviews guest are saying about our stays !!
         </div>
         <div className='textTwo'> 
