@@ -88,7 +88,8 @@ function closedBookForm (){
                     {/* <div >{stay.address}</div> */}
                     <div>{stay.city}, {stay.state} </div>
                     {/* <div>{stay.country}</div> */}
-                    <div>${stay.price}/night</div>
+                      <div className="stayPrice">
+                        <div><div>$</div>{stay.price}/night</div></div>
                     <div className='description'>{stay.description}</div>
                   </div>
   

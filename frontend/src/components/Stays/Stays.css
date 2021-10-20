@@ -14,6 +14,10 @@ div.stayIdImage {
 
 }
 
+.stayPrice{
+  display: flex;
+  flex-direction: column;
+}
 .selectedImages {
   margin-top: 40px;
   border-radius: 20px;
